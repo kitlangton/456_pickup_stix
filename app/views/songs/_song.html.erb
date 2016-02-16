@@ -1,5 +1,28 @@
 <tr>
   <td class='song-name'>
-    <%= song.name %>
+    <%= link_to song.name, song %>
   </td>
+  <% if current_user %>
+    <td>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Add To Playlist
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <% @playlists.each do |playlist| %>
+            <li><%= link_to playlist.name, add_to_playlist_path(playlist, song_id: song.id), method: :post %> </li>
+          <% end %>
+        </ul>
+      </div>
+    </td>
+    <td>
+      <% if current_user.has_bookmark?(song) %>
+        <%= button_to "Unbookmark", unbookmark_song_path(song), class: 'btn btn-primary' %>
+      <% else %>
+        <%= button_to "Bookmark", bookmark_song_path(song), class: 'btn btn-primary' %>
+      <% end %>
+    </td>
+  <% end %>
 </tr>

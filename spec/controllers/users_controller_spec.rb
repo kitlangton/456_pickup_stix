@@ -255,7 +255,7 @@ describe UsersController do
 
 
         it 'does not update the user' do
-          expect(user.name).to_not eq('Foo')
+          expect(user.first_name).to_not eq('Foo')
         end
 
 

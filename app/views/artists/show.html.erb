@@ -3,6 +3,10 @@
 <table class='table'>
   <thead>
     <th>Songs</th>
+    <% if current_user %>
+      <th>Add To Playlist</th>
+      <th>Bookmark</th>
+    <% end %>
     <!-- <th>Song Count</th> -->
   </thead>
   <tbody>

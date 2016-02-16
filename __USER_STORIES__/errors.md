@@ -10,8 +10,6 @@
 **So I can know more about what went wrong**
 
 
-
-
 - informative validation errors are shown above all forms when submission fails
 
 

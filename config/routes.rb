@@ -1,6 +1,25 @@
 Rails.application.routes.draw do
+  root "artists#index"
+
   resources :artists
+
   resources :users
+
+  resources :bookmarks
+  resources :playlist_selections
+
+  resources :songs do
+    member do
+      post 'bookmark'
+      post 'unbookmark'
+    end
+  end
+
+  resources :playlists do
+    member do
+      post 'add_to'
+    end
+  end
 
   resources :sessions, only: [:create]
   get '/login' => 'sessions#new'
