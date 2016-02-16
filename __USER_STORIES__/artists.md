@@ -9,7 +9,6 @@
 **So I can see what artists are available**
 
 
-
 - an index of all of the artists in the database exists at `/artists`
 - each artist name is shown in the index as a link
 - each artist name has the number of songs the artist has next to it
@@ -22,7 +21,6 @@
 **I want to view a specific artist**
 
 **So I can see the songs for just that artist**
-
 
 
 - an artist has a SHOW page that corresponds with the route `/artists/:id`
